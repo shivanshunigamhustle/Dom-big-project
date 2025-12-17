@@ -1,0 +1,90 @@
+:root{
+    --pri:#FCDEC0;
+    --sec:#451609;
+    --tri1:#f39600;
+    --tri2:#B4846C;
+}
+
+@font-face{
+    font-family:light;
+    src:url(./aeoniktrial-light.otf)
+
+}
+@font-face{
+    font-family:bold;
+    src:url(./aeoniktrial-bold.otf);
+}
+@font-face{
+     font-family:normal;
+    src:url(./aeoniktrial-regularitalic.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: light;
+    font-size: 20px;
+    color: var(--pri);
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+}
+nav{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: var(--tri2);
+}
+section.allElem{
+height: 100%;
+width: 100%;
+padding: 40px;
+padding-top: 80px;
+display: flex;
+flex-wrap:wrap ;
+align-items: flex-start;
+gap: 40px;
+
+}
+
+.elem{
+    background-color: var(--tri1);
+    /* padding: 20px 30px; */
+    font-size: 50px;
+    border-radius: 10px;
+    height: 400px;
+    width: 330px;
+ text-align: center;
+ overflow: hidden;
+ position: relative;
+ transition: all ease 0.5s;
+}
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+.elem h2{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+.elem:active{
+    scale: 0.95;
+}
+.fullElem{
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+    padding: 40px;
+    font-size: 40px;
+    display: none;
+}
