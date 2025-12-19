@@ -209,7 +209,24 @@ padding: 30px;
 .task h5{
     color: var(--pri);
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
+}
+.task h5 span{
+    background-color: var(--red);
+    color: var(--pri);
+    padding: 5px 6px;
+    border-radius: 50px;
+    font-size: 15px;
+
+}
+.task h5 span.true{
+opacity: 1;
+}
+.task h5 span.false{
+opacity: 0;
 }
 .task button{
     padding:15px 30px;
@@ -237,7 +254,7 @@ padding: 30px;
 }
 .mark-imp input{
 font-size:70px ;
-scale: 2;
+scale: 1.7;
 }
 .mark-imp label{
 font-size:20px ;
