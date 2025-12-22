@@ -4,6 +4,8 @@
     --tri1: #f39600;
     --tri2: #9c3604;
     --red: red;
+    --green: green;
+    --blue:rgba(19, 86, 149, 0.841);
 }
 
 @font-face {
@@ -419,4 +421,49 @@ filter: blur(100px);
     right: 5%;
     top: 5%;
     height: 120px;
+}
+.Phomodoro-timer-fullpage{
+  
+    position: relative;
+}
+.Phomodoro-timer-fullpage h2{
+    font-size: 65px;
+}
+.Phomodoro-timer-fullpage .pomo-timer{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.pomo-timer h1{
+    font-size: 150px;
+    font-weight:1000 ;
+}
+.pomo-timer button{
+    background-color: var(--tri2);
+    padding:15px 40px ;
+    font-size: 25px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px black;
+    transition: all ease 0.3s;
+    font-weight: 700;
+}
+.pomo-timer button:active{
+    scale: 0.91;
+      box-shadow: 0px 0px 0px black;
+}
+.Phomodoro-timer-fullpage .session{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: var(--green);
+    padding: 20px 40px;
+    font-size: 35px;
+    border-radius:5px ;
+
 }
