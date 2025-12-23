@@ -56,11 +56,25 @@ section.allElem {
     width: 100%;
     padding: 40px;
     padding-top: 80px;
+    
+    position: absolute;
+    overflow: auto;
+
+}
+
+.allElem header{
+    height: 400px;
+    width: 100%;
+    background-color: var(--tri2);
+    margin-bottom: 40px;
+    border-radius: 20px;
+}
+.allElem .allFeatures {
+   
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 50px;
-    position: absolute;
+    gap: 60px;
 
 }
 
@@ -464,6 +478,92 @@ filter: blur(100px);
     background-color: var(--green);
     padding: 20px 40px;
     font-size: 35px;
-    border-radius:5px ;
+    border-radius:15px ;
 
+}
+
+/* Daily Goals Page */
+.daily-goals-fullpage {
+  padding: 20px;
+  color: #0b0b0b;
+}
+ .daily-goals-fullpage h2{
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 10px;
+ }
+
+/* Form */
+.dailyAddTask form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+  color: #0b0b0b;
+  margin-top: 50px;
+}
+
+.dailyAddTask input,
+.dailyAddTask textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 5px solid white;
+  outline: none;
+  font-size: 40px;
+  color: #d2cfcf;
+  background-color: var(--sec);
+}
+
+.dailyAddTask button {
+  padding: 10px;
+  background: #4caf50;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dailyAddTask button:hover {
+  background: #43a047;
+}
+
+/* Tasks */
+.dailyAllTask {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.daily-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.daily-task h4 {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* Important task */
+.daily-task.important {
+  border-left: 4px solid #ff5252;
+}
+
+/* Done button */
+.daily-task button {
+  background: #ff5252;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.daily-task button:hover {
+  background: #e53935;
 }

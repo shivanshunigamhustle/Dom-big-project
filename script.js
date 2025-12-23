@@ -212,3 +212,58 @@ resetBtn.addEventListener('click', resetTimer)
 
 }
 pomodorotimerhai();
+
+
+
+
+
+function dailyGoals() {
+    let goals = JSON.parse(localStorage.getItem('dailyGoals')) || [];
+
+    const taskContainer = document.querySelector('.dailyAllTask');
+    const form = document.querySelector('.dailyAddTask form');
+    const taskInput = document.querySelector('#daily-task-input');
+    const checkbox = document.querySelector('#daily-check');
+
+    function renderGoals() {
+        localStorage.setItem('dailyGoals', JSON.stringify(goals));
+
+        let html = '';
+        goals.forEach((goal, idx) => {
+            html += `
+            <div class="daily-task ${goal.imp ? 'important' : ''}">
+                <h4>${goal.task}</h4>
+                <button data-id="${idx}">Done</button>
+            </div>`;
+        });
+
+        taskContainer.innerHTML = html;
+
+        taskContainer.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                goals.splice(btn.dataset.id, 1);
+                renderGoals();
+            });
+        });
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (taskInput.value.trim() === '') return;
+
+        goals.push({
+            task: taskInput.value,
+            imp: checkbox.checked
+        });
+
+        taskInput.value = '';
+        checkbox.checked = false;
+
+        renderGoals();
+    });
+
+    renderGoals();
+}
+
+dailyGoals();
