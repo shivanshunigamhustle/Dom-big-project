@@ -6,6 +6,7 @@
     --red: red;
     --green: green;
     --blue:rgba(19, 86, 149, 0.841);
+    --black:black;
 }
 
 @font-face {
@@ -34,7 +35,7 @@
 
 html,
 body {
-    height: 100%;
+    height: 120%;
     width: 100%;
 }
 
@@ -44,12 +45,7 @@ body {
     background-color: var(--sec);
 }
 
-nav {
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    background-color: var(--tri2);
-}
+
 
 section.allElem {
     height: 100%;
@@ -62,12 +58,53 @@ section.allElem {
 
 }
 
-.allElem header{
-    height: 400px;
+.allElem header {
     width: 100%;
-    background-color: var(--tri2);
     margin-bottom: 40px;
+    background-image: url(https://images.unsplash.com/photo-1679843151695-c7568f0b3818?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+   background-size: cover;
+   opacity:0.8;
+   background-position: center;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px;
+}
+header .header1 h1{
+    font-size: 100px;
+        color: black;
+
+
+}
+header .header1 h2{
+    font-size: 40px;
+        color: black;
+}
+header .header1 h4{
+    margin-top: 20px;
+    font-size: 80px;
+        color: black;
+
+}
+header .header2 h2{
+    font-size: 40px;
+    font-weight: 2000;
+     color: black;
+          margin-bottom: 30px;
+
+
+}
+header .header2 h4{
+    font-size: 50px;
+     color: black;
+     margin-bottom: 20px;
+
+}
+header .header2 h3{
+    font-size: 30px;
+     color: black;
+
 }
 .allElem .allFeatures {
    
@@ -117,6 +154,7 @@ section.allElem {
     padding: 40px;
     display: none;
     position: absolute;
+    top: 0;
 }
 
 .back {
@@ -350,9 +388,8 @@ section.allElem {
 
 
  }
-.motivational-fullpage{
-    position: relative;
-}
+
+
 .motivation-fullpage-container{
     height: 100%;
     width: 100%;
@@ -436,10 +473,7 @@ filter: blur(100px);
     top: 5%;
     height: 120px;
 }
-.Phomodoro-timer-fullpage{
-  
-    position: relative;
-}
+
 .Phomodoro-timer-fullpage h2{
     font-size: 65px;
 }
@@ -566,4 +600,207 @@ filter: blur(100px);
 
 .daily-task button:hover {
   background: #e53935;
+}
+nav {
+    height: 60px;
+    width: 100%;
+        padding: 40px;
+        margin-bottom: 35px;
+
+}
+.nav-in{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--tri2);
+    padding: 12px;
+    border-radius: 10px;
+}
+.nav-in h2{
+    font-size: 30px;
+    font-weight: 700;
+}
+.theme{
+    background-color: var(--pri);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+    cursor: pointer;
+    
+}
+.theme i{
+color: var(--sec);
+font-weight: 400;
+}
+.theme:active{
+    scale: 0.8;
+}
+
+
+
+
+
+/* =========================
+   Tablets (max-width: 1024px)
+========================= */
+@media (max-width: 1024px) {
+
+  header .header1 h1 {
+    font-size: 70px;
+  }
+
+  header .header1 h4 {
+    font-size: 55px;
+  }
+
+  header .header2 h2,
+  header .header2 h4 {
+    font-size: 32px;
+  }
+
+  .elem {
+    width: 45%;
+    height: 350px;
+  }
+
+  .todo-list-fullpage .todo-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .todo-list-fullpage .todo-container .addTask,
+  .todo-list-fullpage .todo-container .allTask {
+    width: 100%;
+    height: auto;
+  }
+
+  .daily-planner .day-planner-time {
+    width: 100%;
+  }
+
+  .pomo-timer h1 {
+    font-size: 110px;
+  }
+}
+
+/* =========================
+   Mobiles (max-width: 768px)
+========================= */
+@media (max-width: 768px) {
+
+  section.allElem {
+    padding: 20px;
+    padding-top: 100px;
+  }
+
+  .allElem header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+  }
+
+  header .header1 h1 {
+    font-size: 50px;
+  }
+
+  header .header1 h4 {
+    font-size: 40px;
+  }
+
+  header .header2 h2,
+  header .header2 h4,
+  header .header2 h3 {
+    font-size: 24px;
+  }
+
+  .allElem .allFeatures {
+    justify-content: center;
+  }
+
+  .elem {
+    width: 100%;
+    height: 300px;
+  }
+
+  .todo-list-fullpage h2,
+  .daily-planner h2,
+  .Phomodoro-timer-fullpage h2 {
+    font-size: 40px;
+  }
+
+  .task h5 {
+    font-size: 22px;
+  }
+
+  .task button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .motivation-2 h1 {
+    font-size: 45px;
+  }
+
+  .pomo-timer h1 {
+    font-size: 80px;
+  }
+
+  .pomo-timer button {
+    padding: 12px 25px;
+    font-size: 20px;
+  }
+
+  .session {
+    font-size: 22px;
+    padding: 12px 25px;
+  }
+}
+
+/* =========================
+   Small Mobiles (max-width: 480px)
+========================= */
+@media (max-width: 480px) {
+
+  * {
+    font-size: 16px;
+  }
+
+  header .header1 h1 {
+    font-size: 38px;
+  }
+
+  header .header1 h4 {
+    font-size: 30px;
+  }
+
+  header .header2 h2,
+  header .header2 h4,
+  header .header2 h3 {
+    font-size: 20px;
+  }
+
+  .elem {
+    height: 260px;
+  }
+
+  .motivation-2 h1 {
+    font-size: 35px;
+  }
+
+  .dailyAddTask input,
+  .dailyAddTask textarea {
+    font-size: 22px;
+  }
+
+  .pomo-timer h1 {
+    font-size: 65px;
+  }
+
+  nav {
+    padding: 20px;
+  }
+
+  .nav-in h2 {
+    font-size: 22px;
+  }
 }

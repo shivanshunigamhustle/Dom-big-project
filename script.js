@@ -133,82 +133,82 @@ function motivationalQuotes() {
 motivationalQuotes();
 
 
-function pomodorotimerhai(){
+function pomodorotimerhai() {
     let timer = document.querySelector('.pomo-timer h1');
-let startBtn = document.querySelector('.pomo-timer .start-timer')
-let pauseBtn = document.querySelector('.pomo-timer .pause-timer')
-let resetBtn = document.querySelector('.pomo-timer .reset-timer')
-let session =document.querySelector('.Phomodoro-timer-fullpage .session')
-let isWorksession=true
+    let startBtn = document.querySelector('.pomo-timer .start-timer')
+    let pauseBtn = document.querySelector('.pomo-timer .pause-timer')
+    let resetBtn = document.querySelector('.pomo-timer .reset-timer')
+    let session = document.querySelector('.Phomodoro-timer-fullpage .session')
+    let isWorksession = true
 
-var timerInterval = null
-let totalSeconds = 25 * 60;
-function updateTimer() {
-    let minutes = Math.floor(totalSeconds / 60)
-    let seconds = totalSeconds % 60;
+    var timerInterval = null
+    let totalSeconds = 25 * 60;
+    function updateTimer() {
+        let minutes = Math.floor(totalSeconds / 60)
+        let seconds = totalSeconds % 60;
 
-    timer.innerHTML = `${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')}`
+        timer.innerHTML = `${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')}`
 
 
-}
-function startTimer() {
-    clearInterval(timerInterval)
-
-    if(isWorksession){
-    
-
-        totalSeconds=25*60
-         timerInterval = setInterval(() => {
-        if (totalSeconds > 0) {
-
-            totalSeconds--
-            updateTimer()
-        } else {
-            isWorksession=false
-            clearInterval(timerInterval)
-         timer.innerHTML='05:00'
-           session.innerHTML='Break session'
-           session.style.backgroundColor='var(--red)'
-        }
-
-    }, 1000);
-    }else{
-          
-           totalSeconds=5*60
-         timerInterval = setInterval(() => {
-        if (totalSeconds > 0) {
-
-            totalSeconds--
-            updateTimer()
-        } else {
-            isWorksession=true
-            clearInterval(timerInterval)
-              timer.innerHTML='25:00'
-                  session.innerHTML='Work session'
-     session.style.backgroundColor='var(--green)'
-             
-           
-
-        }
-
-    },1000 );
     }
+    function startTimer() {
+        clearInterval(timerInterval)
 
-   
+        if (isWorksession) {
 
 
-}
-function puaseTimer() {
-    clearInterval(timerInterval)
-}
-function resetTimer() {
-    totalSeconds = 25 * 60
-    clearInterval(timerInterval)
-    updateTimer()
-}
-startBtn.addEventListener('click', startTimer)
-pauseBtn.addEventListener('click', puaseTimer)
-resetBtn.addEventListener('click', resetTimer)
+            totalSeconds = 25 * 60
+            timerInterval = setInterval(() => {
+                if (totalSeconds > 0) {
+
+                    totalSeconds--
+                    updateTimer()
+                } else {
+                    isWorksession = false
+                    clearInterval(timerInterval)
+                    timer.innerHTML = '05:00'
+                    session.innerHTML = 'Break session'
+                    session.style.backgroundColor = 'var(--red)'
+                }
+
+            }, 1000);
+        } else {
+
+            totalSeconds = 5 * 60
+            timerInterval = setInterval(() => {
+                if (totalSeconds > 0) {
+
+                    totalSeconds--
+                    updateTimer()
+                } else {
+                    isWorksession = true
+                    clearInterval(timerInterval)
+                    timer.innerHTML = '25:00'
+                    session.innerHTML = 'Work session'
+                    session.style.backgroundColor = 'var(--green)'
+
+
+
+                }
+
+            }, 1000);
+        }
+
+
+
+
+    }
+    function puaseTimer() {
+        clearInterval(timerInterval)
+    }
+    function resetTimer() {
+        totalSeconds = 25 * 60
+        clearInterval(timerInterval)
+        updateTimer()
+    }
+    startBtn.addEventListener('click', startTimer)
+    pauseBtn.addEventListener('click', puaseTimer)
+    resetBtn.addEventListener('click', resetTimer)
 
 }
 pomodorotimerhai();
@@ -267,3 +267,100 @@ function dailyGoals() {
 }
 
 dailyGoals();
+
+
+
+function weatherfunction(){
+    let apiKey = "8ff2f87e669d401980a94857252312";
+let city = "Jabalpur";
+
+var header1Date = document.querySelector('.header1 h1')
+var header1Date2 = document.querySelector('.header1 h2')
+var header2temp = document.querySelector('.header2 h2')
+var header2tcloud = document.querySelector('.header2 h4')
+var header2preci = document.querySelector('.header2 .preci')
+var header2humidity = document.querySelector('.header2 .Humidity')
+var header2wind = document.querySelector('.header2 .wind')
+
+
+var data = null;
+async function weatherapi() {
+    const response = await fetch(
+        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+    );
+
+    const data = await response.json();
+    header2temp.innerHTML=`${data.current.temp_c}°C`
+    header2tcloud.innerHTML=`${data.current.condition.text}`
+    header2preci.innerHTML=`Precipitation:${data.current.heatindex_c} %`
+    header2humidity.innerHTML=`Humidity:${data.current.humidity}%`
+    header2wind.innerHTML=`wind:${data.current.wind_kph} km/h`
+}
+
+weatherapi();
+var date = null
+
+function timeDate() {
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const daysOfmonths = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    date = new Date
+    var totalday = daysOfWeek[date.getDay()]
+    var ghanta = date.getHours()
+    var minutes = date.getMinutes()
+    var seconds = date.getSeconds()
+    var dates = date.getDate()
+    var month = daysOfmonths[date.getMonth()]
+    var year = date.getFullYear()
+
+    header1Date2.innerHTML = ` ${dates} ${month} ${year}`
+    if (ghanta > 12) {
+        header1Date.innerHTML = `${totalday},${String(ghanta-12).padStart('2','0')  }:${String(minutes).padStart('2','0')}:${String(seconds).padStart('2','0')}pm`
+      
+
+    } else {
+        header1Date.innerHTML = `${totalday},${String(ghanta-12).padStart('2','0') }:${String(minutes).padStart('2','0')}:${String(seconds).padStart('2','0')}am`
+
+    }
+}
+setInterval(()=>{
+    timeDate()
+
+},1000)
+
+
+
+}
+weatherfunction();
+
+
+
+var theme=document.querySelector('.theme')
+var rootElement=document.documentElement
+var flag=0;
+theme.addEventListener('click',()=>{
+
+    if(flag===0){
+        rootElement.style.setProperty('--pri','#FCDEC0')
+    rootElement.style.setProperty('--sec','#222831')
+    rootElement.style.setProperty('--tri1','#948973')
+    rootElement.style.setProperty('--tri2','#393E42')
+    flag=1
+    }else if(flag==1){
+        rootElement.style.setProperty('--pri','#000000')
+    rootElement.style.setProperty('--sec','#1DCD9F')
+    rootElement.style.setProperty('--tri1','#222222')
+    rootElement.style.setProperty('--tri2',' #169976')
+    flag=2
+    }else if(flag==2){
+         rootElement.style.setProperty('--pri','#FCDEC0')
+    rootElement.style.setProperty('--sec','#451609')
+    rootElement.style.setProperty('--tri1','#f39600')
+    rootElement.style.setProperty('--tri2',' #9c3604')
+    flag=0
+
+    }
+
+})
